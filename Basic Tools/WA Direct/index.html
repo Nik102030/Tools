@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WA Drirect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="" class="container">
+        </table>
+        <tr>
+            <td>
+                <!-- <label for="countryCode">countryCode</label> -->
+                <select id="countryCode" name="countryCode">
+                    <option value="+91" selected>+91</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="phoneNo" id="phoneNo"><br>
+                <textarea name="msg" id="msg" cols="30" rows="10"></textarea><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="myURL">Redirecting URL</p>
+        </tr>
+        </td>
+        <table>
+
+    </form>
+    <input type="button" value="OK" onclick="myfunction();">
+
+    <script>
+        function myfunction() {
+            var myLink = "http://api.whatsapp.com/?phone=" + countryCode.value + "&text=" + encodeURI(msg.value);
+            document.getElementById("myURL").innerHTML = myLink;
+            var a=0;
+
+            setTimeout(myRedirect, 1000 , myLink);
+            function myRedirect(a) {
+                location.replace(a);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
